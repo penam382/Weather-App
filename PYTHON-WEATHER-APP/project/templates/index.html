@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather App</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+
+  </head>
+  <body>
+    <h1>Enter a city name to get the temperature</h1>
+    <form method="POST">
+      <input type="text" name="city">
+      <button type="submit">Submit</button>
+    </form>
+    {% if error %}
+      <p>{{ error }}</p>
+    {% elif weather and temp %}
+      <p>The weather in {{ city }} is: {{ weather }}</p>
+      <p>The temperature in {{ city }} is: {{ temp }}ºF</p>
+    {% endif %}
+  </body>
+</html>
